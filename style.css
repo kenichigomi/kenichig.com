@@ -5,6 +5,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 img {
     width: 40em;
     max-width: 90%;
