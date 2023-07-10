@@ -7,7 +7,14 @@ body {
 
 h1 {
     font-family: 'Roboto', sans-serif;;
+}
 
+h2 {
+    font-family: 'Roboto', sans-serif;;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;;
 }
 
 p {
@@ -20,8 +27,9 @@ img {
 
 }
 
-button {
+nav {
+    padding: 25;
+    text-align: center;
     font-family: 'Roboto', sans-serif;
-    color: red;
-
+    color: #4169e1;
 }
