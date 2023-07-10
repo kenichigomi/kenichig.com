@@ -33,3 +33,23 @@ nav {
     font-family: 'Roboto', sans-serif;
     color: #4169e1;
 }
+
+a:active {
+    color: red;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #4169e1;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4169e1;
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #4169e1;
+    text-decoration: none;
+}
