@@ -34,11 +34,18 @@ nav {
     padding-top: 25px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
     color: black;
 }
 
 nav.navbar a:active {
     color: red;
+    text-decoration: underline;
+}
+
+nav.navbar a.active {
+    color: yellow;
     text-decoration: underline;
 }
 
@@ -49,10 +56,5 @@ nav.navbar a:visited {
 
 nav.navbar a:hover {
     color: red;
-    text-decoration: none;
-}
-
-nav.navbar a:link, a:visited {
-    color: black;
     text-decoration: none;
 }
