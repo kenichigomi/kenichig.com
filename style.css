@@ -3,3 +3,9 @@ body {
     padding: 0;
     text-align: center; 
 }
+
+img {
+    width: 40em;
+    max-width: 90%;
+
+}
