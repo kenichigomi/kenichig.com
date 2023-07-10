@@ -39,14 +39,10 @@ nav {
     color: black;
 }
 
-nav.navbar a:active {
-    color: red;
-    text-decoration: underline;
-}
-
+nav.navbar a:active,
 nav.navbar a.active {
-    color: yellow;
-    text-decoration: underline;
+    color: #4169e1;
+    text-decoration: none;
 }
 
 nav.navbar a:visited {
@@ -56,5 +52,5 @@ nav.navbar a:visited {
 
 nav.navbar a:hover {
     color: red;
-    text-decoration: none;
+    text-decoration: underline;
 }
