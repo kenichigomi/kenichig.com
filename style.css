@@ -33,7 +33,6 @@ img {
 nav {
     padding-top: 25px;
     text-align: center;
-    text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 20px;
@@ -47,11 +46,11 @@ nav.navbar a:visited {
 
 nav.navbar a:hover {
     color: #4169e1;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 nav.navbar a:active,
 nav.navbar a.active {
     color: #4169e1;
-    text-decoration: underline;
+    text-decoration: none;
 } 
