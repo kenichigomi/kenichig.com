@@ -6,15 +6,17 @@ body {
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 64px;    
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;;
+    font-family: 'Roboto', sans-serif;
 }
 
 p {
