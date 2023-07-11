@@ -67,3 +67,13 @@ nav.navbar a.active {
     color: #4169e1;
     text-decoration: underline;
 } 
+
+a {
+    color: #4169e1;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #4169e1;
+    text-decoration: none;
+}
