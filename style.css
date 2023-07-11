@@ -1,26 +1,26 @@
+/* Set defaults */
 body {
     margin: 0;
     padding: 0;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
     font-size: 64px;    
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
 }
 
-h2 {
-    font-family: 'Roboto', sans-serif;
+h3 {
+    font-size: 22px;
 }
 
 p {
-    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
 }
 
 img {
@@ -59,3 +59,9 @@ nav.navbar a.active {
     color: #4169e1;
     text-decoration: underline;
 } 
+
+
+.changelog {
+    text-align: right;
+    padding: 1% 10%;
+}
