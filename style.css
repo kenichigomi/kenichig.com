@@ -1,10 +1,10 @@
 /* Set defaults */
 body {
-    margin: 0;
+    margin: 50px;
     padding: 0;
-    text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    text-align: left;
 }
 
 h1 {
@@ -39,7 +39,7 @@ img {
 
 /* Navbar stuff */
 nav {
-    padding-top: 25px;
+    padding: 30px;
     text-align: center;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
@@ -67,10 +67,3 @@ nav.navbar a.active {
     color: #4169e1;
     text-decoration: underline;
 } 
-
-.changelog {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-align: left;
-    padding: 1% 20%;
-}
