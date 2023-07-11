@@ -9,19 +9,19 @@ body {
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 64px;    
 }
 
 h2 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 40px;
 }
 
 h3 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 22px;
 }
 
@@ -73,5 +73,5 @@ nav.navbar a.active {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     text-align: left;
-    padding: 1% 10%;
+    padding: 1% 20%;
 }
