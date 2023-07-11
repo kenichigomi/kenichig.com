@@ -62,6 +62,8 @@ nav.navbar a.active {
 
 
 .changelog {
-    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
     padding: 1% 10%;
 }
