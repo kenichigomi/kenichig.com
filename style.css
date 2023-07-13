@@ -62,21 +62,21 @@ nav.navbar a:visited {
 }
 
 nav.navbar a:hover {
-    color: #4169e1;
+    color: #00308F;
     text-decoration: underline;
 }
 
 nav.navbar a.active {
-    color: #4169e1;
+    color: #00308F;
     text-decoration: underline;
 } 
 
 a {
-    color: #4169e1;
+    color: #00308F;
     text-decoration: none;
 }
 
 a:visited {
-    color: #4169e1;
+    color: #00308F;
     text-decoration: none;
 }
