@@ -27,6 +27,7 @@
 const canvas = document.getElementById("plant");
 const ctx = canvas.getContext("2d");
 
-ctx.fillStyle = "green";
-ctx.fillRect(10, 10, 150, 100);
+// make ground
+ctx.fillStyle = "black";
+ctx.fillRect(0, 490, 10, 500);
 draw();
