@@ -29,5 +29,5 @@ const ctx = canvas.getContext("2d");
 
 // make ground
 ctx.fillStyle = "black";
-ctx.fillRect(0, 490, 10, 500);
+ctx.fillRect(0, 490, 500, 30);
 draw();
