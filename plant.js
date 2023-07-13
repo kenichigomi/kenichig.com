@@ -24,14 +24,8 @@
     - The plant has died (no water for 7+ days)
 */
 
-function setup() {
-    createCanvas(400, 400);
-}
+const canvas = document.getElementById("plant");
+const ctx = canvas.getContext("2d");
 
-function draw() {
-    background(51);
-
-    var len = 100
-    stroke(255);
-    line(200, height, 200, height-len)
-}
+ctx.fillStyle = "white";
+ctx.fillRect(10, 10, 150, 100)
