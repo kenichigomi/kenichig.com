@@ -13,6 +13,10 @@ h1 {
     font-size: 64px;    
 }
 
+.name {
+    margin-bottom: 15px;
+}
+
 h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
