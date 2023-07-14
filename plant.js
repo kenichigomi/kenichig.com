@@ -24,13 +24,38 @@
     - The plant has died (no water for 7+ days)
 */
 
-const canvas = document.getElementById("plant");
-const ctx = canvas.getContext("2d");
-
-// make ground
 
 // water var counter
 var water_button = document.getElementById("water_button"), water_count=0;
 water_button.onclick = function() {
     water_count += 1;
 };
+
+// fractal code
+const canvas = document.getElementById("plant");
+const ctx = canvas.getContext("2d");
+
+function draw(startX, startY, len, angle, branchWidth) {
+    ctx.lineWidth = branchWidth;
+
+    ctx.beginPath();
+    ctx.save();
+
+    ctx.translate(startX, startY);
+    ctx.rotate(angle * Math.PI / 180);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(0, -len);
+    ctx.stroke();
+
+    if(len < 10) {
+        ctx.restore();
+        return;
+    }
+
+    draw(0, -len, len*0.8, -15);
+    draw(0, -len, len*0.8, +15);
+
+    ctx.restore();
+}
+
+draw(400, 600, 120, 0)
