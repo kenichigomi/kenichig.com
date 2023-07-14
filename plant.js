@@ -76,4 +76,4 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.restore();
 }
 
-draw(250, 500, 80, 0, 8)
+draw(250, 450, 80, 0, 8)
