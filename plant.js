@@ -66,11 +66,12 @@ function setCookie(cookie_name, cookie_value, exp_days) {
         setCookie("brownColor", getRandomInt(64, 168), 365);
         setCookie("plusAngle", getRandomInt(10, 30), 365);
         setCookie("minusAngle", getRandomInt(10, 30), 365);
+        setCookie("waterStreak", 0, 365);
     }
 };
 
 // draw function
-function draw(startX, startY, len, angle, branchWidth) {
+function draw(startX, startY, len, angle, branchWidth, streakVar) {
     ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
@@ -85,7 +86,7 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineTo(0, -len);
     ctx.stroke();
 
-    if(len < 10) {
+    if(len < streakVar) {
         ctx.restore();
         return;
     }
@@ -96,13 +97,19 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.restore();
 };
 
-// TODO: Let's add that button back
 // water var counter
-const water_button = document.getElementById("water_button"), water_count=0;
-water_button.onclick = function addCount() {
+var water_button = document.getElementById("water_button"), water_count=0;
+water_button.onclick = function() {
     water_count += 1;
 };
 
-checkCookie();
-draw(250, 450, 80, 0, 8);
+var streakCount = 0;
 
+// stuff that happens when day is loaded
+checkCookie();
+draw(250, 450, 80, 0, 8, 10);
+
+// TODO:
+// figure out some sort of math to determine the amount of water that needs to be added to the plant
+// what is max growth of the plant?
+// We start off at 80
