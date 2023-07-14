@@ -86,7 +86,7 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineTo(0, -len);
     ctx.stroke();
 
-    if(len < 10) {
+    if(len < stopRecursion) {
         ctx.restore();
         return;
     }
@@ -104,6 +104,7 @@ water_button.onclick = function() {
 };
 
 var streakCount = 0;
+var stopRecursion = 10;
 
 // stuff that happens when day is loaded
 checkCookie();
