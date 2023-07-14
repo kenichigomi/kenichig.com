@@ -31,3 +31,10 @@ const ctx = canvas.getContext("2d");
 ctx.fillStyle = "black";
 ctx.fillRect(0, 490, 500, 30    );
 draw();
+
+// water var counter
+
+var water_button = document.getElementById("water_button"), water_count=0;
+water_button.onclick = function() {
+    water_count += 1;
+};
