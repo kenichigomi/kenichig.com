@@ -26,10 +26,10 @@
 
 
 // water var counter
-var water_button = document.getElementById("water_button"), water_count=0;
-water_button.onclick = function() {
-    water_count += 1;
-};
+//var water_button = document.getElementById("water_button"), water_count=0;
+//water_button.onclick = function() {
+//    water_count += 1;
+//};
 
 // fractal code
 const canvas = document.getElementById("plant");
