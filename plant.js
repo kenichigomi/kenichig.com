@@ -62,11 +62,11 @@ function draw(startX, startY, len, angle, branchWidth) {
         ctx.restore();
         return;
     }
-
-    draw(0, -len, len*0.8, -15, branchWidth*0.8);
-    draw(0, -len, len*0.8, +15, branchWidth*0.8);
+    //default +- angle is 15
+    draw(0, -len, len*0.8, -10, branchWidth*0.8);
+    draw(0, -len, len*0.8, +20, branchWidth*0.8);
 
     ctx.restore();
 }
 
-draw(250, 500, 80, 40, 8)
+draw(250, 500, 80, 0, 8)
