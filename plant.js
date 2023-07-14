@@ -52,8 +52,8 @@ function draw(startX, startY, len, angle, branchWidth) {
         return;
     }
 
-    draw(0, -len, len*0.8, -15);
-    draw(0, -len, len*0.8, +15);
+    draw(0, -len, len*0.8, -15, branchWidth*0.8);
+    draw(0, -len, len*0.8, +15, branchWidth*0.8);
 
     ctx.restore();
 }
