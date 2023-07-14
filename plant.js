@@ -42,12 +42,43 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// set variables for drawing
-// TODO: store each variable in a cookie so that we can use that instead
-var brownColor = getRandomInt(64, 168);
-var plusAngle = getRandomInt(10, 30);
-var minusAngle = getRandomInt(10, 30);
+// cookies!
+function setCookie(cookie_name, cookie_value, exp_days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exp_days * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
+  }
+  
+  function getCookie(cookie_name) {
+    let name = cookie_name + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+  function checkCookie(cookie_name) {
+    let check_cookie = getCookie(`${cookie_name}`);
+    if (check_cookie != "") {
+      pass;
+    } else {
+        setCookie("brownColor", getRandomInt(64, 168), 365);
+        setCookie("plusAngle", getRandomInt(10, 30), 365);
+        setCookie("minusAngle", getRandomInt(10, 30), 365);
+    }
+  }
 
+//var brownColor = getCookie("brownColor");
+//var plusAngle = getCookie("plusAngle");
+//var minusAngle = getCookie("minusAngle");
 
 // draw function
 function draw(startX, startY, len, angle, branchWidth) {
@@ -56,8 +87,8 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.beginPath();
     ctx.save();
 
-    ctx.strokeStyle = `rgba(${brownColor}, 63, 0, 1)`;
-    ctx.fillStyle = `rgba(${brownColor}, 63, 0, 1)`;
+    ctx.strokeStyle = `rgba(${getCookie("brownColor")}, 63, 0, 1)`;
+    ctx.fillStyle = `rgba(${getCookie("brownColor")}, 63, 0, 1)`;
 
     ctx.translate(startX, startY);
     ctx.rotate(angle * Math.PI / 180);
@@ -70,10 +101,12 @@ function draw(startX, startY, len, angle, branchWidth) {
         return;
     }
     //default +- angle is 15
-    draw(0, -len, len*0.8, -`${minusAngle}`, branchWidth*0.8);
-    draw(0, -len, len*0.8, +`${plusAngle}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, -`${getCookie("minusAngle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, +`${getCookie("plusAngle")}`, branchWidth*0.8);
 
     ctx.restore();
 }
+
+checkCookie("brownColor");
 
 draw(250, 450, 80, 0, 8)
