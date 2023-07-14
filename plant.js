@@ -24,13 +24,6 @@
     - The plant has died (no water for 7+ days)
 */
 
-
-// water var counter
-//var water_button = document.getElementById("water_button"), water_count=0;
-//water_button.onclick = function() {
-//    water_count += 1;
-//};
-
 // init
 const canvas = document.getElementById("plant");
 const ctx = canvas.getContext("2d");
@@ -76,9 +69,12 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     }
   }
 
-//var brownColor = getCookie("brownColor");
-//var plusAngle = getCookie("plusAngle");
-//var minusAngle = getCookie("minusAngle");
+// TODO: Let's add that button back
+// water var counter
+var water_button = document.getElementById("water_button"), water_count=0;
+water_button.onclick = function() {
+    water_count += 1;
+};
 
 // draw function
 function draw(startX, startY, len, angle, branchWidth) {
@@ -108,5 +104,5 @@ function draw(startX, startY, len, angle, branchWidth) {
 }
 
 checkCookie();
-
 draw(250, 450, 80, 0, 8);
+
