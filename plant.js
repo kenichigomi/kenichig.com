@@ -35,11 +35,22 @@
 const canvas = document.getElementById("plant");
 const ctx = canvas.getContext("2d");
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
     ctx.save();
+
+    var brownColor = getRandomInt(64, 168)
+
+    ctx.strokeStyle = `rgba(${brownColor}, 63, 0, 1)`;
+    ctx.fillStyle = `rgba(${brownColor}, 63, 0, 1)`;
 
     ctx.translate(startX, startY);
     ctx.rotate(angle * Math.PI / 180);
