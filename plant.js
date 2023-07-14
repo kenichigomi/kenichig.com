@@ -91,11 +91,19 @@ function draw(startX, startY, len, angle, branchWidth) {
         return;
     }
     //default +- angle is 15
-    draw(0, -len, len*0.8, -`${getCookie("minusAngle")}`, branchWidth*0.8);
-    draw(0, -len, len*0.8, +`${getCookie("plusAngle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, angle-`${getCookie("minusAngle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, angle+`${getCookie("plusAngle")}`, branchWidth*0.8);
 
     ctx.restore();
 };
+
+// TODO:
+// figure out some sort of math to determine the amount of water that needs to be added to the plant
+// what is max growth of the plant?
+// We start off at 80, visual changes occur every increment of 20, which means that I can in theory get
+// 80 days worth of content?
+
+// I have a massive size limitation currently...
 
 // water var counter
 var water_button = document.getElementById("water_button"), water_count=0;
@@ -103,6 +111,7 @@ water_button.onclick = function() {
     water_count += 1;
 };
 
+// variables that need updating
 var streakCount = 0;
 var stopRecursion = 10;
 
@@ -110,7 +119,3 @@ var stopRecursion = 10;
 checkCookie();
 draw(250, 450, 80, 0, 8);
 
-// TODO:
-// figure out some sort of math to determine the amount of water that needs to be added to the plant
-// what is max growth of the plant?
-// We start off at 80
