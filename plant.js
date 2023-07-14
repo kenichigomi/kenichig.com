@@ -65,10 +65,10 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     return "";
   }
   
-  function checkCookie(cookie_name) {
-    let check_cookie = getCookie(`${cookie_name}`);
+  function checkCookie() {
+    let check_cookie = getCookie("brownColor");
     if (check_cookie != "") {
-      pass;
+      //pass
     } else {
         setCookie("brownColor", getRandomInt(64, 168), 365);
         setCookie("plusAngle", getRandomInt(10, 30), 365);
@@ -107,6 +107,6 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.restore();
 }
 
-checkCookie("brownColor");
+checkCookie();
 
-draw(250, 450, 80, 0, 8)
+draw(250, 450, 80, 0, 8);
