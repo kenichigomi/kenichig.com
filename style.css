@@ -55,6 +55,10 @@ ul {
     line-height: 135%;
 }
 
+canvas {
+    margin-bottom: 10%;
+}
+
 button {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
