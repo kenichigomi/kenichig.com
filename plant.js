@@ -57,4 +57,4 @@ function draw(startX, startY, len, angle) {
     ctx.restore();
 }
 
-draw(250, 500, 60, 0)
+draw(250, 500, 80, 0)
