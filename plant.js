@@ -98,8 +98,8 @@ function draw(startX, startY, len, angle, branchWidth) {
 
 // TODO: Let's add that button back
 // water var counter
-var water_button = document.getElementById("water_button"), water_count=0;
-water_button.onclick = function() {
+const water_button = document.getElementById("water_button"), water_count=0;
+water_button.onclick = function addCount() {
     water_count += 1;
 };
 
