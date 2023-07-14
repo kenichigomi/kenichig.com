@@ -62,11 +62,16 @@ canvas {
 button {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    padding: 12px 24px;
+    text-decoration: none;
+    padding: 12px 12px;
     line-height: 3;
     color: black;
     border: 2px solid black;
     background-color: white;
+}
+
+button:hover {
+    text-decoration: underline;
 }
 
 
