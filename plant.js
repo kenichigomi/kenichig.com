@@ -35,8 +35,7 @@ water_button.onclick = function() {
 const canvas = document.getElementById("plant");
 const ctx = canvas.getContext("2d");
 
-function draw(startX, startY, len, angle, branchWidth) {
-    ctx.lineWidth = branchWidth;
+function draw(startX, startY, len, angle) {
 
     ctx.beginPath();
     ctx.save();
