@@ -71,7 +71,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 };
 
 // draw function
-function draw(startX, startY, len, angle, branchWidth, streakVar) {
+function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
@@ -86,7 +86,7 @@ function draw(startX, startY, len, angle, branchWidth, streakVar) {
     ctx.lineTo(0, -len);
     ctx.stroke();
 
-    if(len < streakVar) {
+    if(len < 10) {
         ctx.restore();
         return;
     }
@@ -107,7 +107,7 @@ var streakCount = 0;
 
 // stuff that happens when day is loaded
 checkCookie();
-draw(250, 450, 80, 0, 8, 10);
+draw(250, 450, 80, 0, 8);
 
 // TODO:
 // figure out some sort of math to determine the amount of water that needs to be added to the plant
