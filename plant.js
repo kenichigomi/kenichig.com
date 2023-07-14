@@ -43,11 +43,10 @@ function getRandomInt(min, max) {
 
 function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
+    var brownColor = getRandomInt(64, 168)
 
     ctx.beginPath();
     ctx.save();
-
-    var brownColor = getRandomInt(64, 168)
 
     ctx.strokeStyle = `rgba(${brownColor}, 63, 0, 1)`;
     ctx.fillStyle = `rgba(${brownColor}, 63, 0, 1)`;
