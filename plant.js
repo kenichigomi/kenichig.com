@@ -41,7 +41,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var brownColor = getRandomInt(64, 168)
+var brownColor = getRandomInt(64, 168)  
 
 function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
