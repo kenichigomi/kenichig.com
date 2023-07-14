@@ -33,7 +33,7 @@ function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
 
 // cookies!
 function setCookie(cookie_name, cookie_value, exp_days) {
@@ -41,7 +41,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     d.setTime(d.getTime() + (exp_days * 24 * 60 * 60 * 1000));
     let expires = "expires="+d.toUTCString();
     document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
-  }
+};
   
   function getCookie(cookie_name) {
     let name = cookie_name + "=";
@@ -56,7 +56,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
       }
     }
     return "";
-  }
+};
   
   function checkCookie() {
     let check_cookie = getCookie("brownColor");
@@ -67,7 +67,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
         setCookie("plusAngle", getRandomInt(10, 30), 365);
         setCookie("minusAngle", getRandomInt(10, 30), 365);
     }
-  }
+};
 
 // TODO: Let's add that button back
 // water var counter
