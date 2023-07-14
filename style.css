@@ -65,7 +65,7 @@ button {
     padding: 12px 24px;
     line-height: 3;
     color: black;
-    border: black;
+    border: 2px solid black;
     background-color: white;
 }
 
