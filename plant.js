@@ -69,13 +69,6 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     }
 };
 
-// TODO: Let's add that button back
-// water var counter
-var water_button = document.getElementById("water_button"), water_count=0;
-water_button.onclick = function() {
-    water_count += 1;
-};
-
 // draw function
 function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
@@ -101,7 +94,14 @@ function draw(startX, startY, len, angle, branchWidth) {
     draw(0, -len, len*0.8, +`${getCookie("plusAngle")}`, branchWidth*0.8);
 
     ctx.restore();
-}
+};
+
+// TODO: Let's add that button back
+// water var counter
+var water_button = document.getElementById("water_button"), water_count=0;
+water_button.onclick = function() {
+    water_count += 1;
+};
 
 checkCookie();
 draw(250, 450, 80, 0, 8);
