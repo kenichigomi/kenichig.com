@@ -35,7 +35,8 @@
 const canvas = document.getElementById("plant");
 const ctx = canvas.getContext("2d");
 
-function draw(startX, startY, len, angle) {
+function draw(startX, startY, len, angle, branchWidth) {
+    ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
     ctx.save();
@@ -57,4 +58,4 @@ function draw(startX, startY, len, angle) {
     ctx.restore();
 }
 
-draw(250, 500, 80, 0)
+draw(250, 500, 80, 0, 8)
