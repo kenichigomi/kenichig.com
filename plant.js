@@ -31,18 +31,25 @@
 //    water_count += 1;
 //};
 
-// fractal code
+// init
 const canvas = document.getElementById("plant");
 const ctx = canvas.getContext("2d");
 
+// randon integer puller
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-var brownColor = getRandomInt(64, 168)  
+// set variables for drawing
+// TODO: store each variable in a cookie so that we can use that instead
+var brownColor = getRandomInt(64, 168);
+var plusAngle = getRandomInt(10, 30);
+var minusAngle = getRandomInt(10, 30);
 
+
+// draw function
 function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
 
@@ -63,8 +70,8 @@ function draw(startX, startY, len, angle, branchWidth) {
         return;
     }
     //default +- angle is 15
-    draw(0, -len, len*0.8, -10, branchWidth*0.8);
-    draw(0, -len, len*0.8, +20, branchWidth*0.8);
+    draw(0, -len, len*0.8, -`${minusAngle}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, +`${plusAngle}`, branchWidth*0.8);
 
     ctx.restore();
 }
