@@ -91,8 +91,8 @@ function draw(startX, startY, len, angle, branchWidth) {
         return;
     }
     //default +- angle is 15
-    draw(0, -len, len*0.8, angle-`${getCookie("minusAngle")}`, branchWidth*0.8);
-    draw(0, -len, len*0.8, angle+`${getCookie("plusAngle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, -`${getCookie("minusAngle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, +`${getCookie("plusAngle")}`, branchWidth*0.8);
 
     ctx.restore();
 };
