@@ -1,5 +1,5 @@
 // cookies!
-(() => {
+
   const getCookie = (name) => {
     const value = " " + document.cookie;
     console.log("value", `==${value}==`);
@@ -40,5 +40,5 @@
     setCookie(cookieAccept, "closed");
     $cookiesBanner.remove();
   });
-})();
+
 
