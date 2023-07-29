@@ -1,26 +1,29 @@
 // cookies!
 (() => {
-function setCookie(cookie_name, cookie_value, exp_days) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exp_days * 24 * 60 * 60 * 1000));
-    let expires = "expires="+d.toUTCString();
-    document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
-};
+  const getCookie = (name) => {
+    const value = " " + document.cookie;
+    console.log("value", `==${value}==`);
+    const parts = value.split(" " + name + "=");
+    return parts.length < 2 ? undefined : parts.pop().split(";").shift();
+  };
   
-  function getCookie(cookie_name) {
-    let name = cookie_name + "=";
-    let ca = document.cookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-};
+  const setCookie = function (name, value, expiryDays, domain, path, secure) {
+    const exdate = new Date();
+    exdate.setHours(
+      exdate.getHours() +
+        (typeof expiryDays !== "number" ? 365 : expiryDays) * 24
+    );
+    document.cookie =
+      name +
+      "=" +
+      value +
+      ";expires=" +
+      exdate.toUTCString() +
+      ";path=" +
+      (path || "/") +
+      (domain ? ";domain=" + domain : "") +
+      (secure ? ";secure" : "");
+  };
 
 
   const $cookiesBanner = document.querySelector(".cookieBanner");
