@@ -157,10 +157,6 @@ a:visited {
 
 /* plant stuff */
 
-#plant {
-    align-items: center;
-}
-
-#water_button {
-    align-items: center;
+.plantCanvas {
+    text-align: center;
 }
