@@ -37,7 +37,7 @@
   }
 
   $cookiesBannerButton.addEventListener("click", () => {
-    setCookie(cookieAccept, "closed", 365);
+    setCookie(cookieAccept, "closed");
     $cookiesBanner.remove();
   });
 })();

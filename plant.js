@@ -60,7 +60,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
   
   function checkCookie() {
     let check_cookie = getCookie("cookieAccept");
-    if (check_cookie == "cookiesBanner") {
+    if (check_cookie == `"closed"`) {
       //pass
     } 
     else {
