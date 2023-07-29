@@ -67,6 +67,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
         setCookie("plusAngle", getRandomInt(10, 30), 365);
         setCookie("minusAngle", getRandomInt(10, 30), 365);
         setCookie("waterStreak", 0, 365);
+        setCookie("didUserWater", "No", 1);
     }
 };
 
@@ -86,7 +87,7 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineTo(0, -len);
     ctx.stroke();
 
-    if(len < stopRecursion) {
+    if(len < recursionMax) {
         ctx.restore();
         return;
     }
@@ -106,32 +107,26 @@ function draw(startX, startY, len, angle, branchWidth) {
 // I have a massive size limitation currently...
 
 // water var counter
-var water_button = document.getElementById("water_button"), water_count=0;
-water_button.onclick = function() {
-    water_count += 1;
-};
+var clicks = 0;
+
+function onClick() {
+  clicks += 1;
+  
+if (clicks === 10) {
+  setCookie("didUserWater", "Yes", 1);
+}}; 
 
 // variables that need updating
 var streakCount = 0;
-var stopRecursion = 10;
+var recursionMax = 10;
 
 // stuff that happens when page is loaded
 checkCookie();
 draw(250, 450, 80, 0, 8);
 
-
 // daily watering
 
 
-var clicks = 0;
-
-function onClick() {
-  clicks += 1;
-  document.getElementById("clicks").innerHTML = clicks;
-  
-if (clicks === 10) {
-  setCookie("temporary", 10, 365);
-}
-};  
+ 
 
 
