@@ -34,7 +34,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
   }
 
   $cookiesBannerButton.addEventListener("click", () => {
-    setCookie(cookiePerms, "closed", 365);
+    setCookie(cookieName, "closed", 365);
     $cookiesBanner.remove();
   });
 })();
