@@ -111,6 +111,19 @@ water_button.onclick = function() {
     water_count += 1;
 };
 
+
+var clicks = 0;
+
+function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+};
+
+if (clicks == 10) {
+  setCookie("temporary", 10, 365)
+}
+
+
 // variables that need updating
 var streakCount = 0;
 var stopRecursion = 10;
@@ -121,10 +134,5 @@ draw(250, 450, 80, 0, 8);
 
 
 // daily watering
-if (water_count === 3) {
-  streakCount = getCookie("waterStreak");
-  setCookie("waterStreak", streakCount+1, 365);
-} else {
-  // pass
-}
+
 
