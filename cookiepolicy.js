@@ -1,4 +1,5 @@
 // cookies!
+(() => {
 function setCookie(cookie_name, cookie_value, exp_days) {
     const d = new Date();
     d.setTime(d.getTime() + (exp_days * 24 * 60 * 60 * 1000));
@@ -21,7 +22,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     return "";
 };
 
-(() => {
+
   const $cookiesBanner = document.querySelector(".cookieBanner");
   const $cookiesBannerButton = $cookiesBanner.querySelector("button");
   const cookieName = "cookiePerms";
