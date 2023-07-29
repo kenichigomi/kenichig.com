@@ -1,13 +1,13 @@
 // cookies!
 
-  const getCookie = (name) => {
+  const getCookieForChecker = (name) => {
     const value = " " + document.cookie;
     console.log("value", `==${value}==`);
     const parts = value.split(" " + name + "=");
     return parts.length < 2 ? undefined : parts.pop().split(";").shift();
   };
   
-  const setCookie = function (name, value, expiryDays, domain, path, secure) {
+  const setCookieForChecker = function (name, value, expiryDays, domain, path, secure) {
     const exdate = new Date();
     exdate.setHours(
       exdate.getHours() +
@@ -29,7 +29,7 @@
   const $cookiesBanner = document.querySelector(".cookieBanner");
   const $cookiesBannerButton = $cookiesBanner.querySelector("button");
   const cookieAccept = "cookiesBanner";
-  const hasCookie = getCookie(cookieAccept);
+  const hasCookie = getCookieForChecker(cookieAccept);
 
   
   if (!hasCookie) {
@@ -37,7 +37,7 @@
   }
 
   $cookiesBannerButton.addEventListener("click", () => {
-    setCookie(cookieAccept, "closed");
+    setCookieForChecker(cookieAccept, "closed");
     $cookiesBanner.remove();
   });
 
