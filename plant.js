@@ -59,7 +59,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 };
   
   function checkCookie() {
-    let check_cookie = getCookie(cookieAccept);
+    let check_cookie = getCookie("cookieAccept");
     if (check_cookie === "closed") {
       //pass
     } 
