@@ -150,3 +150,7 @@ a:visited {
     color: #00308F;
     text-decoration: underline;
 }
+
+.hidden {
+    display: none;
+  }

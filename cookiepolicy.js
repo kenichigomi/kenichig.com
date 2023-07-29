@@ -21,3 +21,20 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     return "";
 };
 
+(() => {
+  const $cookiesBanner = document.querySelector(".cookieBanner");
+  const $cookiesBannerButton = $cookiesBanner.querySelector("acceptButton");
+  const cookieName = "cookiePerms";
+  const hasCookie = getCookie(cookieName);
+
+  
+  if (!hasCookie) {
+    $cookiesBanner.classList.remove("hidden");
+  }
+
+  $cookiesBannerButton.addEventListener("click", () => {
+    setCookie(cookiePerms, "closed", 365);
+    $cookiesBanner.remove();
+  });
+})();
+
