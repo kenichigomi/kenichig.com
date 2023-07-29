@@ -59,7 +59,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 };
   
   function checkCookie() {
-    let check_cookie = getCookie("cookieAccept");
+    let check_cookie = getCookie(cookieAccept);
     if (check_cookie === "closed") {
       //pass
     } 
@@ -116,7 +116,7 @@ water_button.onclick = function() {
 var streakCount = 0;
 var stopRecursion = 10;
 
-// stuff that happens when day is loaded
+// stuff that happens when page is loaded
 checkCookie();
 draw(250, 450, 80, 0, 8);
 
