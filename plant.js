@@ -59,7 +59,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 };
   
   function checkCookie() {
-    let check_cookie = getCookie("brownColor");
+    let check_cookie = getCookie("cookieName");
     if (check_cookie != "") {
       //pass
     } else {
