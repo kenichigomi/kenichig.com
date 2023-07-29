@@ -119,3 +119,12 @@ var stopRecursion = 10;
 checkCookie();
 draw(250, 450, 80, 0, 8);
 
+
+// daily watering
+if (water_count === 3) {
+  streakCount = getCookie("waterStreak");
+  setCookie("waterStreak", streakCount+1, 365);
+} else {
+  // pass
+}
+
