@@ -23,7 +23,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 
 (() => {
   const $cookiesBanner = document.querySelector(".cookieBanner");
-  const $cookiesBannerButton = $cookiesBanner.querySelector("acceptCookie");
+  const $cookiesBannerButton = $cookiesBanner.querySelector("button");
   const cookieName = "cookiePerms";
   const hasCookie = getCookie(cookieName);
 
