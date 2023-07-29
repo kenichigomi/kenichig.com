@@ -121,7 +121,7 @@ function onClick() {
 
 if (clicks == 10) {
   setCookie("temporary", 10, 365);
-}
+};
 
 
 // variables that need updating
