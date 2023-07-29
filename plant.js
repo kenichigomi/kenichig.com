@@ -129,9 +129,9 @@ function onClick() {
   clicks += 1;
   document.getElementById("clicks").innerHTML = clicks;
   
-if (clicks == 10) {
+if (clicks === 10) {
   setCookie("temporary", 10, 365);
-};
-};
+}
+};  
 
 
