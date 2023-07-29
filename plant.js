@@ -61,9 +61,8 @@ function setCookie(cookie_name, cookie_value, exp_days) {
   function checkCookie() {
     let check_cookie = getCookie("cookieAccept");
     if (check_cookie === "closed") {
-      //pass
-    } 
-    else {
+      //pass 
+    } else {
         setCookie("brownColor", getRandomInt(64, 168), 365);
         setCookie("plusAngle", getRandomInt(10, 30), 365);
         setCookie("minusAngle", getRandomInt(10, 30), 365);
