@@ -25,8 +25,8 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 
   const $cookiesBanner = document.querySelector(".cookieBanner");
   const $cookiesBannerButton = $cookiesBanner.querySelector("button");
-  const cookieName = "cookiesBanner";
-  const hasCookie = getCookie(cookieName);
+  const cookieAccept = "cookiesBanner";
+  const hasCookie = getCookie(cookieAccept);
 
   
   if (!hasCookie) {
@@ -34,7 +34,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
   }
 
   $cookiesBannerButton.addEventListener("click", () => {
-    setCookie(cookieName, "closed", 365);
+    setCookie(cookieAccept, "closed", 365);
     $cookiesBanner.remove();
   });
 })();
