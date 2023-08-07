@@ -175,12 +175,8 @@ function draw(startX, startY, len, angle, branchWidth) {
     //default +- angle is 15
     draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8);
     draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8);
+    leaves(ctx, 0, -len, 5);
 
-    if (recursion_count >= 5) {
-      leaves(ctx, 0, -len, 5);
-    } else {
-      // pass
-    }
 
     ctx.restore();
 };
