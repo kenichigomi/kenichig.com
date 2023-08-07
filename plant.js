@@ -173,7 +173,7 @@ function draw(startX, startY, len, angle, branchWidth, recursionLevel) {
     //default +- angle is 15
     draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8, recursionLevel);
     draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8, recursionLevel);
-    if (recursionLevel > 5) {
+    if (recursionLevel > 4) {
       leaves(ctx, 0, -len, 5);
     }
 
