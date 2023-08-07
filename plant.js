@@ -128,14 +128,8 @@ function leaves(ctx, branchX, branchY, leafSize) {
       ctx.translate(branchX, branchY);
   
       ctx.beginPath();
-      ctx.arc(0, 0, leafSize, (Math.PI*1.1), (Math.PI*1.9));
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-      
-      ctx.beginPath();
-      ctx.arc(0, -32, leafSize, (Math.PI*0.9), (Math.PI*0.1), 1);
-      ctx.closePath();
+      ctx.ellipse(0, 0, leafSize, 75, Math.PI / 4, 0, 2 * Math.PI);
+      ctx.stroke();
       ctx.fill();
       ctx.restore();
     }
