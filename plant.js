@@ -106,9 +106,9 @@ function onClick() {
 
     if (clicks === 10) {
       setCookie("did_user_water", "Yes", 1);
-      setCookie("water_streak", getCookie("water_streak")+30, 10000);
 }}; 
 
+setCookie("water_streak", getCookie("water_streak")+30, 10000);
 
 // stuff that happens when page is loaded
 checkCookie();
@@ -122,10 +122,10 @@ if (getCookie("water_streak") % 3 === 0) {
   if (recursion_count > 10) {
     draw(250, 450, 80, 0, 10)
   }
-  if (recursion_count > 0) {
+  else if (recursion_count > 0) {
     draw(250, 450, 80, 0, recursion_count)
   } 
-  if (recursion_count === 0) {
+  else if (recursion_count === 0) {
     // pass
   }
 };
