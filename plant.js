@@ -133,15 +133,11 @@ function leaves(ctx, branchX, branchY, leafSize) {
       ctx.restore();
     }
     else if (currentSeason === 'Fall') {
-      ctx.fillStyle = `rgba(255, 0, ${getRandomInt(0, 255)})`;
+      ctx.fillStyle = `rgba(255, ${getRandomInt(0, 255)}, 15)`;
       ctx.translate(branchX, branchY);
-
+  
       ctx.beginPath();
-      ctx.arc(0, 0, leafSize, 0.2 * Math.PI, 1.3 * Math.PI);
-      ctx.arc(0, 0, leafSize * 0.6, 1.3 * Math.PI, 1.8 * Math.PI);
-      ctx.arc(0, 0, leafSize, 1.8 * Math.PI, 3 * Math.PI);
-      ctx.closePath();
-
+      ctx.ellipse(0, 0, leafSize, 15, Math.PI / 4, 0, 2 * Math.PI);
       ctx.fill();
       ctx.restore();
     }
@@ -221,6 +217,5 @@ if (getCookie("water_streak") % 3 === 0) {
  
 /*TODO
     - Add weather stuff
-    - Add leaves/flowers
 */
 
