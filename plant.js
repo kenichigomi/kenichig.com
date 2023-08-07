@@ -72,7 +72,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 };
 
 // draw function
-function draw(startX, startY, len, branchWidth) {
+function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
@@ -127,7 +127,7 @@ if (getCookie("water_streak") % 3 === 0) {
   }
 };
 
-draw(250, 450, 80, recursion_count)
+draw(250, 450, 80, 0, recursion_count)
  
 /*TODO
     - Add weather stuff
