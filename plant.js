@@ -199,7 +199,7 @@ checkCookie();
 // plant fully grows in 80 days
 
 if (getCookie("water_streak") !== 0) {
-  recursion_count = 80 - getCookie("water_streak");
+  recursion_count = 100 - getCookie("water_streak");
   if (recursion_count > 80) {
     // pass
   }
