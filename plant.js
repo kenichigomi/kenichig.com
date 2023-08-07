@@ -87,7 +87,7 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineTo(0, -len);
     ctx.stroke();
 
-    if(len < recurison_max) {
+    if(len < recursion_count) {
         ctx.restore();
         return;
     }
@@ -117,9 +117,6 @@ if (clicks === 10) {
   setCookie("water_streak", getCookie("water_streak") += 1, 365);
 }}; 
 
-// variables that need updating
-var recursion_max = 10;
-var recursion_count = 0;
 
 // stuff that happens when page is loaded
 checkCookie();
