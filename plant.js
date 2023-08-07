@@ -216,7 +216,7 @@ if (getCookie("water_streak") % 3 === 0) {
     draw(250, 450, 80, 0, 8)
   } 
   else if (recursion_count === 0) {
-    // pass
+    draw(0, 0, 0, 0, 0)
   }
 };
 
