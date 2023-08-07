@@ -118,8 +118,8 @@ function onClick() {
 
     if (lastUpdateDate !== currentDate) {
       if (clicks === 3) {
-      setCookie("did_user_water", "Yes", 1);
-      setCookie("water_streak", Number(getCookie("water_streak"))+30, 10000);
+      setCookie("did_user_water", "yes", 1);
+      setCookie("water_streak", Number(getCookie("water_streak"))+1, 10000);
       setCookie("last_water_update", currentDate, 1)
 }}}; 
 
