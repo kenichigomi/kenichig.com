@@ -119,15 +119,17 @@ checkCookie();
 
 if (getCookie("water_streak") % 3 === 0) {
   recursion_count = getCookie("water_streak") / 3;
-  if (recursion_count = 0) {
-    recursion_count = 1;
-  } 
   if (recursion_count > 10) {
-    recursion_count = 10;
+    draw(250, 450, 80, 0, 10)
+  }
+  if (recursion_count > 0) {
+    draw(250, 450, 80, 0, recursion_count)
+  } 
+  if (recursion_count === 0) {
+    // pass
   }
 };
 
-draw(250, 450, 80, 0, recursion_count)
  
 /*TODO
     - Add weather stuff
