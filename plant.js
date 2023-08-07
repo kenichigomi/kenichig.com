@@ -124,7 +124,7 @@ function leaves(ctx, branchX, branchY, leafSize) {
       ctx.restore();
     }
     else if (currentSeason === 'Summer') {
-      ctx.fillStyle = 'green';
+      ctx.fillStyle = `rgba(0, ${getRandomInt(70, 200)}, 0)`;
       ctx.translate(branchX, branchY);
   
       ctx.beginPath();
@@ -173,7 +173,7 @@ function draw(startX, startY, len, angle, branchWidth, recursionLevel) {
     //default +- angle is 15
     draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8, recursionLevel);
     draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8, recursionLevel);
-    if (recursionLevel === 10) {
+    if (recursionLevel > 5) {
       leaves(ctx, 0, -len, 5);
     }
 
