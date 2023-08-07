@@ -72,7 +72,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
 };
 
 // draw function
-function draw(startX, startY, len, angle, branchWidth) {
+function draw(startX, startY, len, branchWidth) {
     ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
@@ -98,23 +98,15 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.restore();
 };
 
-// TODO:
-// figure out some sort of math to determine the amount of water that needs to be added to the plant
-// what is max growth of the plant?
-// We start off at 80, visual changes occur every increment of 20, which means that I can in theory get
-// 80 days worth of content?
-
-// I have a massive size limitation currently...
-
 // water var counter
 var clicks = 0;
 
 function onClick() {
-  clicks += 1;
+    clicks += 1;
 
-if (clicks === 10) {
-  setCookie("did_user_water", "Yes", 1);
-  setCookie("water_streak", getCookie("water_streak") += 1, 365);
+    if (clicks === 10) {
+      setCookie("did_user_water", "Yes", 1);
+      setCookie("water_streak", getCookie("water_streak") += 1, 365);
 }}; 
 
 
@@ -133,11 +125,12 @@ if (getCookie("water_streak") % 3 === 0) {
   if (recursion_count > 10) {
     recursion_count = 10;
   }
-  else {
-    draw(250, 450, 80, 0, recursion_count);
-  }
 };
 
+draw(250, 450, 80, recursion_count)
  
-
+/*TODO
+    - Add weather stuff
+    - Add leaves/flowers
+*/
 
