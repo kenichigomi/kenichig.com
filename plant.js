@@ -120,10 +120,11 @@ checkCookie();
 if (getCookie("water_streak") % 3 === 0) {
   recursion_count = getCookie("water_streak") / 3;
   if (recursion_count > 10) {
-    draw(250, 450, 80, 0, 10)
+    recursion_count = 10;
+    draw(250, 450, 80, 0, 8)
   }
   else if (recursion_count > 0) {
-    draw(250, 450, 80, 0, recursion_count)
+    draw(250, 450, 80, 0, 8)
   } 
   else if (recursion_count === 0) {
     // pass
