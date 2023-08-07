@@ -63,10 +63,10 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     if (check_cookie === "closed") {
       //pass 
     } else {
-        setCookie("tree_color", getRandomInt(64, 168), 365);
-        setCookie("plus_angle", getRandomInt(10, 30), 365);
-        setCookie("minus_angle", getRandomInt(10, 30), 365);
-        setCookie("water_streak", 0, 365);
+        setCookie("tree_color", getRandomInt(64, 168), 10000);
+        setCookie("plus_angle", getRandomInt(10, 30), 10000);
+        setCookie("minus_angle", getRandomInt(10, 30), 10000);
+        setCookie("water_streak", 0, 10000);
         setCookie("did_user_water", "no", 1);
     }
 };
@@ -106,7 +106,7 @@ function onClick() {
 
     if (clicks === 10) {
       setCookie("did_user_water", "Yes", 1);
-      setCookie("water_streak", getCookie("water_streak") += 1, 365);
+      setCookie("water_streak", getCookie("water_streak") += 1, 10000);
 }}; 
 
 

@@ -11,7 +11,7 @@ const setCookieForChecker = function (name, value, expiryDays, domain, path, sec
   const exdate = new Date();
   exdate.setHours(
     exdate.getHours() +
-      (typeof expiryDays !== "number" ? 365 : expiryDays) * 24
+      (typeof expiryDays !== "number" ? 10000 : expiryDays) * 24
   );
   document.cookie =
     name +
