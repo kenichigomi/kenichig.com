@@ -63,11 +63,11 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     if (check_cookie === "closed") {
       //pass 
     } else {
-        setCookie("brownColor", getRandomInt(64, 168), 365);
-        setCookie("plusAngle", getRandomInt(10, 30), 365);
-        setCookie("minusAngle", getRandomInt(10, 30), 365);
-        setCookie("waterStreak", 0, 365);
-        setCookie("didUserWater", "No", 1);
+        setCookie("tree_color", getRandomInt(64, 168), 365);
+        setCookie("plus_angle", getRandomInt(10, 30), 365);
+        setCookie("minus_angle", getRandomInt(10, 30), 365);
+        setCookie("water_streak", 0, 365);
+        setCookie("did_user_water", "no", 1);
     }
 };
 
@@ -78,8 +78,8 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.beginPath();
     ctx.save();
 
-    ctx.strokeStyle = `rgba(${getCookie("brownColor")}, 63, 0, 1)`;
-    ctx.fillStyle = `rgba(${getCookie("brownColor")}, 63, 0, 1)`;
+    ctx.strokeStyle = `rgba(${getCookie("brown_color")}, 63, 0, 1)`;
+    ctx.fillStyle = `rgba(${getCookie("brown_color")}, 63, 0, 1)`;
 
     ctx.translate(startX, startY);
     ctx.rotate(angle * Math.PI / 180);
@@ -87,13 +87,13 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineTo(0, -len);
     ctx.stroke();
 
-    if(len < recursionMax) {
+    if(len < recurison_max) {
         ctx.restore();
         return;
     }
     //default +- angle is 15
-    draw(0, -len, len*0.8, -`${getCookie("minusAngle")}`, branchWidth*0.8);
-    draw(0, -len, len*0.8, +`${getCookie("plusAngle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8);
+    draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8);
 
     ctx.restore();
 };
@@ -111,21 +111,35 @@ var clicks = 0;
 
 function onClick() {
   clicks += 1;
-  
+
 if (clicks === 10) {
-  setCookie("didUserWater", "Yes", 1);
+  setCookie("did_user_water", "Yes", 1);
+  setCookie("water_streak", getCookie("water_streak") += 1, 365);
 }}; 
 
 // variables that need updating
-var streakCount = 0;
-var recursionMax = 10;
+var recursion_max = 10;
+var recursion_count = 0;
 
 // stuff that happens when page is loaded
 checkCookie();
-draw(250, 450, 80, 0, 8);
 
-// daily watering
+// plant fully grows in one month (30 days)
+// recursionMax = 10
+// every 3 days we can change the increment
 
+if (getCookie("water_streak") % 3 === 0) {
+  recursion_count = getCookie("water_streak") / 3;
+  if (recursion_count = 0) {
+    //pass
+  } 
+  if (recursion_count > 10) {
+    recursion_count = 10;
+  }
+  else {
+    draw(250, 450, 80, 0, recursion_count);
+  }
+};
 
  
 
