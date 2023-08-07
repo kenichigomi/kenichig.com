@@ -124,15 +124,18 @@ function leaves(ctx, branchX, branchY, leafSize) {
       ctx.restore();
     }
     else if (currentSeason === 'Summer') {
-      ctx.fillStyle = `rgba(255, 0, ${getRandomInt(0, 255)})`;
+      ctx.fillStyle = 'green';
       ctx.translate(branchX, branchY);
-
+  
       ctx.beginPath();
-      ctx.arc(0, 0, leafSize, 0.2 * Math.PI, 1.3 * Math.PI);
-      ctx.arc(0, 0, leafSize * 0.6, 1.3 * Math.PI, 1.8 * Math.PI);
-      ctx.arc(0, 0, leafSize, 1.8 * Math.PI, 3 * Math.PI);
+      ctx.arc(0, 0, leafSize, (Math.PI*1.1), (Math.PI*1.9));
       ctx.closePath();
-
+      ctx.fill();
+      ctx.restore();
+      
+      ctx.beginPath();
+      ctx.arc(0, -32, leafSize, (Math.PI*0.9), (Math.PI*0.1), 1);
+      ctx.closePath();
       ctx.fill();
       ctx.restore();
     }
@@ -176,7 +179,6 @@ function draw(startX, startY, len, angle, branchWidth) {
     draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8);
     draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8);
     leaves(ctx, 0, -len, 5);
-
 
     ctx.restore();
 };
