@@ -106,7 +106,7 @@ function onClick() {
 
     if (clicks === 10) {
       setCookie("did_user_water", "Yes", 1);
-      setCookie("water_streak", getCookie("water_streak") += 1, 10000);
+      setCookie("water_streak", getCookie("water_streak") += 30, 10000);
 }}; 
 
 
