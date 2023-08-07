@@ -35,6 +35,15 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+// date grabber
+function getCurrentDate() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, '0');
+  const day = String(today.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 // cookies!
 function setCookie(cookie_name, cookie_value, exp_days) {
     const d = new Date();
@@ -102,12 +111,17 @@ function draw(startX, startY, len, angle, branchWidth) {
 var clicks = 0;
 
 function onClick() {
+  const lastUpdateDate = getCookie("last_water_update");
+  const currentDate = getCurrentDate();
+
     clicks += 1;
 
-    if (clicks === 10) {
+    if (lastUpdateDate !== currentDate) {
+      if (clicks === 3) {
       setCookie("did_user_water", "Yes", 1);
       setCookie("water_streak", Number(getCookie("water_streak"))+30, 10000);
-}}; 
+      setCookie("last_water_update", currentDate, 1)
+}}}; 
 
 
 // stuff that happens when page is loaded
