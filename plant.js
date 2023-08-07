@@ -42,7 +42,25 @@ function getCurrentDate() {
   const month = String(today.getMonth() + 1).padStart(2, '0');
   const day = String(today.getDate()).padStart(2, '0');
   return `${year}-${month}-${day}`;
-}
+};
+
+// season grabber
+function getSeason(date) {
+  const springStart = new Date(date.getFullYear(), 2, 20); 
+  const summerStart = new Date(date.getFullYear(), 5, 21); 
+  const autumnStart = new Date(date.getFullYear(), 8, 22); 
+  const winterStart = new Date(date.getFullYear(), 11, 21); 
+
+  if (date >= springStart && date < summerStart) {
+    return 'Spring';
+  } else if (date >= summerStart && date < autumnStart) {
+    return 'Summer';
+  } else if (date >= autumnStart && date < winterStart) {
+    return 'Fall';
+  } else {
+    return 'Winter';
+  }
+};
 
 // cookies!
 function setCookie(cookie_name, cookie_value, exp_days) {
@@ -52,7 +70,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
 };
   
-  function getCookie(cookie_name) {
+function getCookie(cookie_name) {
     let name = cookie_name + "=";
     let ca = document.cookie.split(';');
     for(let i = 0; i < ca.length; i++) {
@@ -67,7 +85,7 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     return "";
 };
   
-  function checkCookie() {
+function checkCookie() {
     let check_cookie = getCookie("cookiesBanner");
     if (check_cookie === "closed") {
       //pass 
@@ -80,7 +98,57 @@ function setCookie(cookie_name, cookie_value, exp_days) {
     }
 };
 
-// draw function
+// draw functions
+function leaves(ctx, branchX, branchY, leafSize) {
+    const currentDate = new Date();
+    const currentSeason = getSeason(currentDate);
+    ctx.save();
+
+    if (currentSeason === 'Winter') {
+      // pass
+    }
+    else if (currentSeason === 'Spring') {
+      ctx.fillStyle = `rgba(255, 0, ${getRandomInt(0, 255)})`;
+      ctx.translate(branchX, branchY);
+
+      ctx.beginPath();
+      ctx.arc(0, 0, leafSize, 0.2 * Math.PI, 1.3 * Math.PI);
+      ctx.arc(0, 0, leafSize * 0.6, 1.3 * Math.PI, 1.8 * Math.PI);
+      ctx.arc(0, 0, leafSize, 1.8 * Math.PI, 3 * Math.PI);
+      ctx.closePath();
+
+      ctx.fill();
+      ctx.restore();
+    }
+    else if (currentSeason === 'Summer') {
+      ctx.fillStyle = `rgba(255, 0, ${getRandomInt(0, 255)})`;
+      ctx.translate(branchX, branchY);
+
+      ctx.beginPath();
+      ctx.arc(0, 0, leafSize, 0.2 * Math.PI, 1.3 * Math.PI);
+      ctx.arc(0, 0, leafSize * 0.6, 1.3 * Math.PI, 1.8 * Math.PI);
+      ctx.arc(0, 0, leafSize, 1.8 * Math.PI, 3 * Math.PI);
+      ctx.closePath();
+
+      ctx.fill();
+      ctx.restore();
+    }
+    else if (currentSeason === 'Fall') {
+      ctx.fillStyle = `rgba(255, 0, ${getRandomInt(0, 255)})`;
+      ctx.translate(branchX, branchY);
+
+      ctx.beginPath();
+      ctx.arc(0, 0, leafSize, 0.2 * Math.PI, 1.3 * Math.PI);
+      ctx.arc(0, 0, leafSize * 0.6, 1.3 * Math.PI, 1.8 * Math.PI);
+      ctx.arc(0, 0, leafSize, 1.8 * Math.PI, 3 * Math.PI);
+      ctx.closePath();
+
+      ctx.fill();
+      ctx.restore();
+    }
+
+}
+
 function draw(startX, startY, len, angle, branchWidth) {
     ctx.lineWidth = branchWidth;
 
@@ -103,6 +171,7 @@ function draw(startX, startY, len, angle, branchWidth) {
     //default +- angle is 15
     draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8);
     draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8);
+    leaves(ctx, 0, -len, 5);
 
     ctx.restore();
 };
@@ -119,7 +188,7 @@ function onClick() {
     if (lastUpdateDate !== currentDate) {
       if (clicks === 3) {
       setCookie("did_user_water", "yes", 1);
-      setCookie("water_streak", Number(getCookie("water_streak"))+1, 10000);
+      setCookie("water_streak", Number(getCookie("water_streak"))+30, 10000);
       setCookie("last_water_update", currentDate, 1)
 }}}; 
 
