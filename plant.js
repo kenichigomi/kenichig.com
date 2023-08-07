@@ -167,12 +167,16 @@ function draw(startX, startY, len, angle, branchWidth) {
     if(len < recursion_count) {
         ctx.restore();
         return;
-    }
+    };
+
     //default +- angle is 15
     draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8);
     draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8);
+
     if (recursion_count >= 5) {
       leaves(ctx, 0, -len, 5);
+    } else {
+      // pass
     }
 
     ctx.restore();
@@ -190,7 +194,7 @@ function onClick() {
     if (lastUpdateDate !== currentDate) {
       if (clicks === 3) {
       setCookie("did_user_water", "yes", 1);
-      setCookie("water_streak", Number(getCookie("water_streak"))+30, 10000);
+      setCookie("water_streak", Number(getCookie("water_streak"))+3, 10000); // make sure this is changed back to 1 later
       setCookie("last_water_update", currentDate, 1)
 }}}; 
 
