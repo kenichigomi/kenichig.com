@@ -188,7 +188,7 @@ function onClick() {
     if (lastUpdateDate !== currentDate) {
       if (clicks === 3) {
       setCookie("did_user_water", "yes", 1);
-      setCookie("water_streak", Number(getCookie("water_streak"))+6, 10000); // make sure this is changed back to 1 later
+      setCookie("water_streak", Number(getCookie("water_streak"))+40, 10000); // make sure this is changed back to 1 later
       setCookie("last_water_update", currentDate, 1)
 }}}; 
 
@@ -196,21 +196,19 @@ function onClick() {
 // stuff that happens when page is loaded
 checkCookie();
 
-// plant fully grows in one month (30 days)
-// recursionMax = 10
-// every 3 days we can change the increment
+// plant fully grows in 80 days
 
-if (getCookie("water_streak") % 3 === 0) {
-  recursion_count = getCookie("water_streak") / 3;
-  if (recursion_count > 10) {
+if (getCookie("water_streak") !== 0) {
+  recursion_count = 80 - getCookie("water_streak");
+  if (recursion_count > 80) {
+    // pass
+  }
+  else if (recursion_count < 13) {
     recursion_count = 10;
     draw(250, 450, 80, 0, 8, 0)
-  }
-  else if (recursion_count > 1) {
-    draw(250, 450, 80, 0, 8, 0)
   } 
-  else if (recursion_count === 1) {
-    // pass
+  else {
+    draw(250, 450, 80, 0, 8, 0)
   }
 };
 
