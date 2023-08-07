@@ -78,8 +78,8 @@ function draw(startX, startY, len, angle, branchWidth) {
     ctx.beginPath();
     ctx.save();
 
-    ctx.strokeStyle = `rgba(${getCookie("brown_color")}, 63, 0, 1)`;
-    ctx.fillStyle = `rgba(${getCookie("brown_color")}, 63, 0, 1)`;
+    ctx.strokeStyle = `rgba(${getCookie("tree_color")}, 63, 0, 1)`;
+    ctx.fillStyle = `rgba(${getCookie("tree_color")}, 63, 0, 1)`;
 
     ctx.translate(startX, startY);
     ctx.rotate(angle * Math.PI / 180);
@@ -120,7 +120,7 @@ checkCookie();
 if (getCookie("water_streak") % 3 === 0) {
   recursion_count = getCookie("water_streak") / 3;
   if (recursion_count = 0) {
-    //pass
+    recursion_count = 1;
   } 
   if (recursion_count > 10) {
     recursion_count = 10;
