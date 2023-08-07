@@ -128,8 +128,7 @@ function leaves(ctx, branchX, branchY, leafSize) {
       ctx.translate(branchX, branchY);
   
       ctx.beginPath();
-      ctx.ellipse(0, 0, leafSize, 75, Math.PI / 4, 0, 2 * Math.PI);
-      ctx.stroke();
+      ctx.ellipse(0, 0, leafSize, 15, Math.PI / 4, 0, 2 * Math.PI);
       ctx.fill();
       ctx.restore();
     }
@@ -149,7 +148,7 @@ function leaves(ctx, branchX, branchY, leafSize) {
 
 }
 
-function draw(startX, startY, len, angle, branchWidth) {
+function draw(startX, startY, len, angle, branchWidth, recursionLevel) {
     ctx.lineWidth = branchWidth;
 
     ctx.beginPath();
@@ -169,10 +168,14 @@ function draw(startX, startY, len, angle, branchWidth) {
         return;
     };
 
+    recursionLevel++;
+
     //default +- angle is 15
-    draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8);
-    draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8);
-    leaves(ctx, 0, -len, 5);
+    draw(0, -len, len*0.8, -`${getCookie("minus_angle")}`, branchWidth*0.8, recursionLevel);
+    draw(0, -len, len*0.8, +`${getCookie("plus_angle")}`, branchWidth*0.8, recursionLevel);
+    if (recursionLevel === 10) {
+      leaves(ctx, 0, -len, 5);
+    }
 
     ctx.restore();
 };
@@ -205,10 +208,10 @@ if (getCookie("water_streak") % 3 === 0) {
   recursion_count = getCookie("water_streak") / 3;
   if (recursion_count > 10) {
     recursion_count = 10;
-    draw(250, 450, 80, 0, 8)
+    draw(250, 450, 80, 0, 8, 0)
   }
   else if (recursion_count > 1) {
-    draw(250, 450, 80, 0, 8)
+    draw(250, 450, 80, 0, 8, 0)
   } 
   else if (recursion_count === 1) {
     // pass
