@@ -173,7 +173,8 @@ checkCookie();
 const $plantWaterButton = document.querySelector(".plantWaterButton");
 const waterCookie = getCookie("did_user_water");
 
-if (!waterCookie) {
+
+if (waterCookie === "no") {
     $plantWaterButton.classList.remove("hidden"); // button should appear if the cookie has expired
 }
 
