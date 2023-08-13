@@ -151,7 +151,7 @@ function draw(startX, startY, len, angle, branchWidth, recursionLevel) {
 };
 
 // water var counter
-var clicks = 0;
+/*var clicks = 0;
 
 function onClick() {
   const lastUpdateDate = getCookie("last_water_update");
@@ -162,21 +162,30 @@ function onClick() {
     if (lastUpdateDate !== currentDate) {
       if (clicks === 1) {
       setCookie("did_user_water", "yes", 1);
-      setCookie("water_streak", Number(getCookie("water_streak"))+10, 10000); // make sure this is changed back to 1 later
+      setCookie("water_streak", Number(getCookie("water_streak"))+10, 10000);
       setCookie("last_water_update", currentDate, 1)
-}}}; 
-
-
-
-
-
-
-
+}}}; */
 
 
 // stuff that happens when page is loaded
 checkCookie();
 
+const $plantWaterButton = document.querySelector(".plantWaterButton");
+const hasCookie = getCookie("did_user_water");
+
+if (!hasCookie) {
+    $plantWaterButton.classList.remove("hidden"); // button should appear if the cookie has expired
+}
+
+  $plantWaterButton.addEventListener("click", () => {
+      setCookie("did_user_water", "yes", 1);
+      setCookie("water_streak", Number(getCookie("water_streak"))+10, 10000);
+      setCookie("last_water_update", currentDate, 1)
+      $plantWaterButton.remove();
+});
+
+
+// calculations
 if (getCookie("water_streak") !== 0) {
   recursion_count = 100 - getCookie("water_streak");
   if (recursion_count > 80) {
