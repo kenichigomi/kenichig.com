@@ -171,9 +171,9 @@ function onClick() {
 checkCookie();
 
 const $plantWaterButton = document.querySelector(".plantWaterButton");
-const hasCookie = getCookie("did_user_water");
+const waterCookie = getCookie("did_user_water");
 
-if (!hasCookie) {
+if (!waterCookie) {
     $plantWaterButton.classList.remove("hidden"); // button should appear if the cookie has expired
 }
 
