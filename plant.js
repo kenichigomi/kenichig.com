@@ -181,7 +181,6 @@ if (waterCookie === "no") {
   $plantWaterButton.addEventListener("click", () => {
       setCookie("did_user_water", "yes", 1);
       setCookie("water_streak", Number(getCookie("water_streak"))+10, 10000);
-      setCookie("last_water_update", currentDate, 1)
       $plantWaterButton.remove();
 });
 
