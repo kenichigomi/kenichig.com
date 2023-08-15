@@ -184,6 +184,10 @@ if (waterCookie === "no") {
       $plantWaterButton.remove();
 });
 
+if (!getCookie("did_user_water")) {
+      setCookie("did_user_water", "no", 1);
+};
+
 
 // calculations
 if (getCookie("water_streak") !== 0) {
