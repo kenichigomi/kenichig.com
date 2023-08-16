@@ -171,10 +171,12 @@ function onClick() {
 checkCookie();
 
 const $plantWaterButton = document.querySelector(".plantWaterButton");
-const waterCookie = getCookie("did_user_water");
 
+if (!getCookie("did_user_water")) {
+  setCookie("did_user_water", "no", 1);
+};
 
-if (waterCookie === "no") {
+if (getCookie("did_user_water") === "no") {
     $plantWaterButton.classList.remove("hidden"); // button should appear if the cookie has expired
 }
 
@@ -183,10 +185,6 @@ if (waterCookie === "no") {
       setCookie("water_streak", Number(getCookie("water_streak"))+10, 10000);
       $plantWaterButton.remove();
 });
-
-if (!getCookie("did_user_water")) {
-      setCookie("did_user_water", "no", 1);
-};
 
 
 // calculations
