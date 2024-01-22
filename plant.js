@@ -26,13 +26,13 @@ function getSeason(date) {
   const winterStart = new Date(date.getFullYear(), 11, 21); 
 
   if (date >= springStart && date < summerStart) {
-    return 'Spring';
+    return 'Summer';
   } else if (date >= summerStart && date < autumnStart) {
     return 'Summer';
   } else if (date >= autumnStart && date < winterStart) {
     return 'Fall';
   } else {
-    return 'Winter';
+    return 'Summer';
   }
 };
 
